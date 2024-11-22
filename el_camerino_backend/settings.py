@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 from decouple import config
 import os
-
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -90,6 +90,8 @@ DATABASES = {
         "PASSWORD": config("DATABASE_PASSWORD"),
         "HOST": config("DATABASE_HOST"),
         "PORT": config("DATABASE_PORT"),
+        'default': dj_database_url.config(
+        default='postgresql://retro_tienda_backend_user:IxnqEWwDyZLmdqb7ZLXdLM3xWYJrKmB3@dpg-ct0d732j1k6c73d5thog-a/retro_tienda_backend')
     }
 }
 
